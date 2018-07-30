@@ -96,3 +96,95 @@ for number in numbers:
         continue
 
     print(number)
+
+
+# Python program to display all the prime numbers within an interval
+
+# change the values of lower and upper for a different result
+lower = 900
+upper = 1000
+
+# uncomment the following lines to take input from the user
+#lower = int(input("Enter lower range: "))
+#upper = int(input("Enter upper range: "))
+
+print("Prime numbers between",lower,"and",upper,"are:")
+
+for num in range(lower,upper + 1):
+   # prime numbers are greater than 1
+   if num > 1:
+       for i in range(2,num):
+           if (num % i) == 0:
+               break
+       else:
+           print(num)
+
+
+
+# Python Program to find the factors of a number
+
+# define a function
+def print_factors(x):
+   # This function takes a number and prints the factors
+
+   print("The factors of",x,"are:")
+   for i in range(1, x + 1):
+       if x % i == 0:
+           print(i)
+
+# change this value for a different result.
+num = 320
+
+# uncomment the following line to take input from the user
+#num = int(input("Enter a number: "))
+
+print_factors(num)
+
+
+# Python program to find the sum of natural numbers up to n where n is provided by user
+
+# change this value for a different result
+num = 16
+
+# uncomment to take input from the user
+#num = int(input("Enter a number: "))
+
+if num < 0:
+   print("Enter a positive number")
+else:
+   sum = 0
+   # use while loop to iterate un till zero
+   while(num > 0):
+       sum += num
+       num -= 1
+   print("The sum is",sum)
+
+
+# Program to display the Fibonacci sequence up to n-th term where n is provided by the user
+
+# change this value for a different result
+nterms = 10
+
+# uncomment to take input from the user
+#nterms = int(input("How many terms? "))
+
+# first two terms
+n1 = 0
+n2 = 1
+count = 0
+
+# check if the number of terms is valid
+if nterms <= 0:
+   print("Please enter a positive integer")
+elif nterms == 1:
+   print("Fibonacci sequence upto",nterms,":")
+   print(n1)
+else:
+   print("Fibonacci sequence upto",nterms,":")
+   while count < nterms:
+       print(n1,end=' , ')
+       nth = n1 + n2
+       # update values
+       n1 = n2
+       n2 = nth
+       count += 1
